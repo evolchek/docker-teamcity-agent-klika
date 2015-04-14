@@ -1,4 +1,4 @@
-FROM klikatech/teamcity-agent
+FROM klikatech/teamcity-agent-base
 
 MAINTAINER Eugene Volchek <evolchek@klika-tech.com>
 
