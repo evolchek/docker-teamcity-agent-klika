@@ -5,7 +5,7 @@ MAINTAINER Eugene Volchek <evolchek@klika-tech.com>
 USER root
 
 RUN apt-get update \
-	&& apt-get install -y bzip2 ruby-full build-essential ant \
+	&& apt-get install -y rsync bzip2 ruby-full build-essential ant \
 		php5-common php5-cli php5-curl php5-memcached php5-mysql php5-gd \
 	&& curl -sL https://deb.nodesource.com/setup | bash - \
 	&& apt-get install -y nodejs \
