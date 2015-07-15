@@ -16,6 +16,7 @@ RUN apt-get update \
 	&& gem install sass \
 	&& gem install compass \
 	&& gem install jekyll \
+	&& curl -sSL https://get.docker.com/ | sh \
 	&& apt-get -y autoremove && apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 USER teamcity
