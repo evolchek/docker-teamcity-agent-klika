@@ -10,6 +10,7 @@ RUN apt-get update \
 		zip \
 	&& curl -sL https://deb.nodesource.com/setup | bash - \
 	&& apt-get install -y nodejs \
+	&& npm install -g npm@next \
 	&& npm install -g bower \
 	&& npm install -g grunt-cli \
 	&& curl -sS https://getcomposer.org/installer | php \
