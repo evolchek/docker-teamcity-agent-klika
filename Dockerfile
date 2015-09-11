@@ -7,7 +7,7 @@ USER root
 RUN apt-get update \
 	&& apt-get install -y rsync bzip2 ruby-full build-essential ant \
 		php5-common php5-cli php5-curl php5-memcached php5-mysql php5-gd \
-		zip \
+		zip nodejs groff less python python-pip \
 	&& curl -sL https://deb.nodesource.com/setup | bash - \
 	&& apt-get install -y nodejs \
 	&& npm install -g npm@next \
@@ -19,6 +19,7 @@ RUN apt-get update \
 	&& gem install compass \
 	&& gem install jekyll \
 	&& curl -sSL https://get.docker.com/ | sh \
+	&& pip install awscli \
 	&& apt-get -y autoremove && apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 USER teamcity
