@@ -4,10 +4,12 @@ MAINTAINER Eugene Volchek <evolchek@klika-tech.com>
 
 USER root
 
-RUN apt-get update \
+RUN echo "deb https://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list
+	&& apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823
+	&& apt-get update \
 	&& apt-get install -y rsync bzip2 ruby-full build-essential ant \
 		php5-common php5-cli php5-curl php5-memcached php5-mysql php5-gd \
-		zip nodejs groff less python python-pip \
+		zip nodejs groff less python python-pip sbt \
 	&& curl -sL https://deb.nodesource.com/setup | bash - \
 	&& apt-get install -y nodejs \
 	&& npm install -g npm@next \
