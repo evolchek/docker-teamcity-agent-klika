@@ -9,6 +9,7 @@ RUN apt-get update \
 		php5-common php5-cli php5-curl php5-memcached php5-mysql php5-gd \
 		zip nodejs groff less python python-pip apt-transport-https \
 	&& curl -sL https://deb.nodesource.com/setup | bash - \
+	&& curl -sL https://deb.nodesource.com/setup_5.x | bash - \
 	&& echo "deb https://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list \
 	&& apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823 \
 	&& apt-get update \
