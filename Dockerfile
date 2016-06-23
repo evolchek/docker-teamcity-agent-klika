@@ -17,6 +17,7 @@ RUN apt-get update \
 	&& npm install -g npm@next \
 	&& npm install -g bower \
 	&& npm install -g grunt-cli \
+	&& npm install -g webpack \
 	&& curl -sS https://getcomposer.org/installer | php \
 	&& mv composer.phar /usr/local/bin/composer \
 	&& gem install sass \
