@@ -16,5 +16,6 @@ This is the [JetBrains TeamCity build agent base image](https://registry.hub.doc
 * zip
 * AWS CLI
 * sbt
+* jq
 
 See [teamcity-agent-base image description](https://registry.hub.docker.com/u/klikatech/teamcity-agent-base/) for usage instructions.
