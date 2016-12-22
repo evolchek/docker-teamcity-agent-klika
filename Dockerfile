@@ -7,7 +7,7 @@ USER root
 RUN apt-get update \
 	&& apt-get install -y rsync bzip2 ruby-full build-essential ant \
 		php5-common php5-cli php5-curl php5-memcached php5-mysql php5-gd \
-		zip nodejs groff less python python-pip apt-transport-https jq \
+		zip maven nodejs groff less python python-pip apt-transport-https jq \
 		libappindicator1 libindicator7 libpango1.0-0 fonts-liberation xdg-utils\
 		&& wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
 		&& dpkg -i google-chrome*.deb \
