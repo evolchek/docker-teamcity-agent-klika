@@ -7,11 +7,15 @@ USER root
 RUN apt-get update \
 	&& apt-get install -y rsync bzip2 ruby-full build-essential ant \
 		php5-common php5-cli php5-curl php5-memcached php5-mysql php5-gd \
-		zip maven nodejs groff less python python-pip apt-transport-https jq \
+		zip nodejs groff less python python-pip apt-transport-https jq \
 		libappindicator1 libindicator7 libpango1.0-0 fonts-liberation xdg-utils\
 		&& wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
 		&& dpkg -i google-chrome*.deb \
 		&& apt-get install -y -f \
+	&& mkdir -p /usr/share/maven \
+  		&& curl -fsSL http://apache.osuosl.org/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz \
+		 | tar -xzC /usr/share/maven --strip-components=1 \
+  		&& ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 	&& apt-get install -y xvfb \
 	&& curl -sL https://deb.nodesource.com/setup_6.x | bash - \
 	&& echo "deb https://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list \
@@ -31,4 +35,7 @@ RUN apt-get update \
 	&& pip install awscli \
 	&& apt-get -y autoremove && apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+	
+ENV MAVEN_HOME /usr/share/maven
+
 USER teamcity
