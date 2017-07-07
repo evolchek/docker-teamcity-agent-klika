@@ -10,7 +10,7 @@ RUN apt-get update \
 		zip nodejs groff less python python-pip apt-transport-https jq \
 		libappindicator1 libindicator7 libpango1.0-0 fonts-liberation xdg-utils\
 		&& wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
-		&& dpkg -i google-chrome*.deb \
+		&& dpkg --force-depends -i google-chrome*.deb \
 		&& apt-get install -y -f \
 	&& mkdir -p /usr/share/maven \
   	&& curl -fsSL http://apache.osuosl.org/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz | tar -xzC /usr/share/maven --strip-components=1 \
