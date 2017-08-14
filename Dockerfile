@@ -12,6 +12,11 @@ RUN apt-get update \
 		&& wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
 		&& dpkg --force-depends -i google-chrome*.deb \
 		&& apt-get install -y -f \
+		&& wget https://dl.google.com/android/android-sdk_r24.2-linux.tgz \
+		&& tar -xfz android-sdk_r24.2-linux.tgz \
+		&& cd android-sdk-linux \
+		&& tools/android update sdk \
+		&& cd .. \
 	&& mkdir -p /usr/share/maven \
   	&& curl -fsSL http://apache.osuosl.org/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz | tar -xzC /usr/share/maven --strip-components=1 \
   	&& ln -s /usr/share/maven/bin/mvn /usr/bin/mvn \
