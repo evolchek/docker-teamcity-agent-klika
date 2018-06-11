@@ -5,7 +5,7 @@ MAINTAINER Eugene Volchek <evolchek@klika-tech.com>
 USER root
 
 RUN apt-get update \
-	&& apt-get install -y rsync bzip2 ruby-full build-essential ant \
+	&& apt-get install -y rsync bzip2 ruby2.2.5-full build-essential ant \
 		php5-common php5-mysql php5-pgsql php5-cli php5-dev php5-curl php5-memcached php5-gd \
 		zip nodejs groff less python python-pip python3 python3-pip apt-transport-https jq \
 		libappindicator1 libindicator7 libpango1.0-0 fonts-liberation xdg-utils\
