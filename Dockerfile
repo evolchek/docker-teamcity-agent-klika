@@ -16,6 +16,7 @@ RUN apt-get update \
   	&& curl -fsSL http://apache.osuosl.org/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz | tar -xzC /usr/share/maven --strip-components=1 \
   	&& ln -s /usr/share/maven/bin/mvn /usr/bin/mvn \
 	&& apt-get install -y xvfb \
+	&& apt-get install -y openjfx \
 	&& curl -sL https://deb.nodesource.com/setup_6.x | bash - \
 	&& echo "deb https://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list \
 	&& apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823 \
